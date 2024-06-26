@@ -28,7 +28,8 @@ function main(){
             dataDisplay.appendChild(priceElement);
             dataDisplay.appendChild(descriptionElement);
 
-    })
+    }).catch((error) =>{alert(error);})
+
 
 
 
