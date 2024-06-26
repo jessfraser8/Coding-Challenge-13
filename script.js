@@ -35,18 +35,24 @@ async function sleep(milli) {
 // Display data.
 function displayPageData() {
     const product = productData[index]
-
+    
+    const nameField = document.getElementById("name-label")
+    nameField.textContent = "Name: "
     const nameElement = document.getElementById("name");
-    nameElement.textContent = "Name: " + product.name;
+    nameElement.textContent = product.name;
 
     const imageElement = document.getElementById("image");
     imageElement.setAttribute("src", product.image)
 
+    const priceField = document.getElementById("price-label")
+    priceField.textContent = "Price: "
     const priceElement = document.getElementById("price");
-    priceElement.textContent = "Price: " + "$" + product.price;
+    priceElement.textContent = "$" + product.price;
 
+    const descripField = document.getElementById("description-label")
+    descripField.textContent = "Description: "
     const descriptionElement = document.getElementById("description");
-    descriptionElement.textContent = "Description: " + product.description;
+    descriptionElement.textContent = product.description;
 }
 
 // Fetch and display data.
@@ -60,7 +66,7 @@ function main(){
         loading.textContent = '';
         // Dynamic to data length.
         length = data.length
-        
+
         productData = data
         displayPageData()
 
