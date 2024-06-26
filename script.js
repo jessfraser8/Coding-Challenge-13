@@ -58,10 +58,10 @@ function main(){
         await sleep (2000)
         let loading = document.getElementById("loading")
         loading.textContent = '';
+        // Dynamic to data length.
         length = data.length
-    
+        
         productData = data
-
         displayPageData()
 
         // Add error catch.
