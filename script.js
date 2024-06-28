@@ -7,25 +7,19 @@ let index = 0
 // Display next button.
 function onNext() {
     index++
-
     if (index >= length) {
         index = 0
     }
-
     displayPageData()
-
 }
 
 // Display previous button.
 function onPrevious() {
     index--
-
     if (index < 0) {
         index = length -1
     }
-    
     displayPageData()
-
 }
 
 async function sleep(milli) {
@@ -57,11 +51,10 @@ function displayPageData() {
 
 // Fetch and display data.
 function main(){
-    
     const request = fetch("https://www.course-api.com/react-store-products")
     .then(response => response.json())
     .then(async function (data) {
-        await sleep (2000)
+        await sleep (1000)
         let loading = document.getElementById("loading")
         loading.textContent = '';
         // Dynamic to data length.
@@ -71,6 +64,6 @@ function main(){
         displayPageData()
 
         // Add error catch.
-    }).catch((error) =>{alert(error);})
+    }).catch((error) =>{alert("Sorry, an error occured. Try again soon.");})
 
 }
